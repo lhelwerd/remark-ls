@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "description": "Dependencies for remark-ls.mjs, which wraps remark-language-server so this directory's shared Markdown conventions always apply, not just when remark-language-server's own upward file search reaches .remarkrc.mjs.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
   "dependencies": {
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
