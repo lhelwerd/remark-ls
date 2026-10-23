@@ -8,11 +8,10 @@
 // needs a stringify handler instead of a setting, and
 // strip-link-titles.mjs for which link titles count as "redundant".
 //
-// Discovered via nvim-lspconfig's remark_ls `root_markers`, which look for
-// this file (or a sibling .remarkrc*) starting at the edited file's own
-// directory and walking upward; symlink it to someplace that is an ancestor
-// of every Markdown file you want formatted (e.g. "ln -s
-// ~/vim/nvim/remark/.remarkrc.mjs ~/.remarkrc.mjs"), see README.md.
+// remark-ls.mjs imports this file's "plugins" and "settings" as remark_ls's
+// own always-applied baseline (see there for why that wrapper exists
+// instead of relying solely on remark-language-server's own upward
+// `.remarkrc*` search).
 import stripRedundantLinkTitles from './strip-link-titles.mjs'
 import tighten from './tighten.mjs'
 import trailingSpaceText from './trailing-space.mjs'

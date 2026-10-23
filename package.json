@@ -1,0 +1,10 @@
+{
+  "name": "vim-remark-ls",
+  "private": true,
+  "type": "module",
+  "description": "Dependencies for remark-ls.mjs, which wraps remark-language-server so this directory's shared Markdown conventions always apply, not just when remark-language-server's own upward file search reaches .remarkrc.mjs.",
+  "dependencies": {
+    "remark": "^15.0.1",
+    "unified-language-server": "^4.1.0"
+  }
+}
