@@ -12,12 +12,15 @@
 // own always-applied baseline (see there for why that wrapper exists
 // instead of relying solely on remark-language-server's own upward
 // `.remarkrc*` search).
+import remarkGfm from 'remark-gfm'
 import stripRedundantLinkTitles from './strip-link-titles.mjs'
 import tighten from './tighten.mjs'
 import trailingSpaceText from './trailing-space.mjs'
 
 export default {
-  plugins: [tighten, stripRedundantLinkTitles],
+  // remark-gfm adds GitHub-flavored Markdown support (strikethrough,
+  // tables, task lists, autolinks) to both parsing and stringifying.
+  plugins: [remarkGfm, tighten, stripRedundantLinkTitles],
   settings: {
     bullet: '-',
     listItemIndent: 'one',
