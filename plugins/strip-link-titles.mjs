@@ -5,7 +5,7 @@
 // already on the line) and commonly come along for the ride when pandoc
 // converts HTML links (see autoload/clipboard.vim). A genuinely different
 // title (a real tooltip/description) is left untouched. Used by
-// ../remark/.remarkrc.mjs.
+// ../.remarkrc.mjs.
 function toText(node) {
   if (typeof node.value === 'string') {
     return node.value

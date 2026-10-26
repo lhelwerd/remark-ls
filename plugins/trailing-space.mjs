@@ -7,7 +7,7 @@
 // them back. This only touches the plain line endings already encoded in
 // a text node's value (soft breaks); explicit hard breaks are a separate
 // mdast node type, so they and everything else (code, headings, etc.) are
-// left alone. Used by ../remark/.remarkrc.mjs.
+// left alone. Used by ../.remarkrc.mjs.
 export default function trailingSpaceText(node, parent, state, info) {
   const siblings = parent ? parent.children : []
   const index = siblings.indexOf(node)

@@ -4,7 +4,7 @@
 // no built-in stringifier option for this: looseness is read from each
 // list's (and list item's) own "spread" property, set while parsing from
 // whether the source had blank lines, so it has to be cleared here before
-// stringifying. Used by ../remark/.remarkrc.mjs.
+// stringifying. Used by ../.remarkrc.mjs.
 export default function tighten() {
   return (tree) => {
     const visit = (node) => {

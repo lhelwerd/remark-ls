@@ -18,7 +18,7 @@ import path from 'node:path'
 import {PassThrough} from 'node:stream'
 import {test} from 'node:test'
 
-register('../plugin-resolve-shim.mjs', import.meta.url)
+register('../lib/plugin-resolve-shim.mjs', import.meta.url)
 
 const {engine} = await import('unified-engine')
 const {remark} = await import('remark')

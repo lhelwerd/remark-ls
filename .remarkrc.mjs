@@ -13,9 +13,9 @@
 // instead of relying solely on remark-language-server's own upward
 // `.remarkrc*` search).
 import remarkGfm from 'remark-gfm'
-import stripRedundantLinkTitles from './strip-link-titles.mjs'
-import tighten from './tighten.mjs'
-import trailingSpaceText from './trailing-space.mjs'
+import stripRedundantLinkTitles from './plugins/strip-link-titles.mjs'
+import tighten from './plugins/tighten.mjs'
+import trailingSpaceText from './plugins/trailing-space.mjs'
 
 export default {
   // remark-gfm adds GitHub-flavored Markdown support (strikethrough,
