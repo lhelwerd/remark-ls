@@ -73,7 +73,7 @@ settings:
 
 ## License
 
-The remark language server wrapper is licensed under the [LICENSE](MIT License).
+The remark language server wrapper is licensed under the [MIT License](LICENSE).
 
 Disclaimer: Some of the code was written using AI, see [AGENTS.md](AGENTS.md) 
 for details.
