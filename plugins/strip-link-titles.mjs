@@ -2,10 +2,9 @@
 // `"..."` after the URL, e.g. from an HTML <a title="...">) whenever it is
 // redundant: exactly the same as the link's own text or as its URL. Such
 // titles add nothing readable (an unselectable tooltip restating what is
-// already on the line) and commonly come along for the ride when pandoc
-// converts HTML links (see autoload/clipboard.vim). A genuinely different
-// title (a real tooltip/description) is left untouched. Used by
-// ../.remarkrc.mjs.
+// already on the line) and commonly come along for the ride when HTML links
+// are converted to Markdown. A genuinely different title with a real tooltip
+// or description is left untouched. Used by ../.remarkrc.mjs.
 function toText(node) {
   if (typeof node.value === 'string') {
     return node.value

@@ -12,7 +12,7 @@
     "coverage": "node --test --experimental-test-coverage --test-reporter=tap --test-reporter=junit --test-reporter=lcov --test-reporter-destination=stdout --test-reporter-destination=junit.xml --test-reporter-destination=lcov.info tests/*.test.mjs"
   },
   "bin": {
-      "remark-ls": "bin/index.mjs"
+    "remark-ls": "bin/index.mjs"
   },
   "files": [
     "bin/index.mjs",
@@ -21,8 +21,11 @@
     ".remarkrc.mjs"
   ],
   "dependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
-    "unified-language-server": "^4.1.0"
+    "unified-language-server": "^4.1.0",
+    "unist-util-visit": "^5.2.0"
   }
 }
