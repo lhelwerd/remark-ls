@@ -67,14 +67,15 @@ settings:
   the bullet or number (plus one for unordered lists or two for numbered lists), 
   and use increasing numbers instead of formatting numbered list with `1.` for 
   every item
-- `validate-json-blocks`: Report diagnostics for fenced `json` code blocks that 
-  are not valid JSON. If a block's top-level object has a `$schema` that is 
-  a file path (relative to the Markdown file or absolute), the block is also 
-  validated against that JSON Schema (draft 2020-12, including `format` 
-  checks); URL schemas are ignored
 - Paragraph formatting: Add a trailing space at the end of each line within 
   a textual block, so not for the final line, allowing some editors to rewrap 
   the text automatically during editing without relying on the LSP to reformat
+
+It also lints content, reporting diagnostics instead of changing text:
+
+- `validate-json-blocks`: Report fenced `json` code blocks that are invalid 
+  JSON, or that fail the JSON Schema (draft 2020-12) given by a local file 
+  path in their top-level `$schema`
 
 ## Releasing
 
