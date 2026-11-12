@@ -1,6 +1,6 @@
 {
   "name": "@lhelwerda/remark-ls",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Wrapper of remark-language-server to apply shared Markdown conventions everywhere",
   "repository": {

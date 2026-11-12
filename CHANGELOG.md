@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.1](https://github.com/lhelwerd/remark-ls/compare/v0.1.0...v0.1.1) (2026-11-12)
+
+### Bug Fixes
+
+* Use normalized repository field in package.json ([f4bd6b0](https://github.com/lhelwerd/remark-ls/commit/f4bd6b075c1ad331dbc5674537d05b3091f656b2))
+
 ## [0.1.0](https://github.com/lhelwerd/remark-ls/compare/v0.0.1...v0.1.0) (2026-11-12)
 
 ### Features
