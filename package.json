@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Wrapper of remark-language-server to apply shared Markdown conventions everywhere",
-  "repository": "https://github.com/lhelwerd/remark-ls",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lhelwerd/remark-ls.git"
+  },
   "bugs": "https://github.com/lhelwerd/remark-ls/issues",
   "license": "MIT",
   "publishConfig": {
