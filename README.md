@@ -76,6 +76,25 @@ settings:
   a textual block, so not for the final line, allowing some editors to rewrap 
   the text automatically during editing without relying on the LSP to reformat
 
+## Releasing
+
+We have automated the release process. Pushing commits with messages following 
+[Conventional Commits](https://www.conventionalcommits.org/) to `main` runs the 
+[GitHub CI](https://github.com/lhelwerd/remark-ls/actions) for tests and then 
+a semantic release workflow, which:
+
+- Determines if a new version is to be published and what the next version is 
+  (`fix:` -> patch `x.y.z+1`, `feat:` -> minor `x.y+1.z`, breaking change with 
+  `!` or `BREAKING CHANGE:` -> major `x+1.y.z`; `chore(...):` does not release);
+- Updates `CHANGELOG.md` and the version in `package.json` and the lock file, 
+  then commits them without triggering the CI again;
+- Publishes to [npm](https://www.npmjs.com/package/@lhelwerda/remark-ls) through 
+  trusted publishing (with provenance); and
+- Creates a [GitHub release](https://github.com/lhelwerd/remark-ls/releases) 
+  with the package tarball attached
+
+Do not run `npm version` or `npm publish` by hand.
+
 ## License
 
 The remark language server wrapper is licensed under the [MIT License](LICENSE).
