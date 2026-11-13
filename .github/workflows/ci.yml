@@ -41,5 +41,4 @@ jobs:
           --no-git.requireBranch
           --no-git.requireUpstream
           --no-git.requireCleanWorkingDir
-          --npm.skipChecks
           --github.skipChecks
