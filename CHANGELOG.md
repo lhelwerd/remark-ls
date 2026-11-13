@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.2](https://github.com/lhelwerd/remark-ls/compare/v0.1.1...v0.1.2) (2026-11-13)
+
+### Bug Fixes
+
+* Override glob and minimatch versions ([e6e4d99](https://github.com/lhelwerd/remark-ls/commit/e6e4d99f93337743bbf2d2ad29c69c98f400c5ff))
+
 ## [0.1.1](https://github.com/lhelwerd/remark-ls/compare/v0.1.0...v0.1.1) (2026-11-12)
 
 ### Bug Fixes
