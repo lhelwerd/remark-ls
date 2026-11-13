@@ -14,7 +14,8 @@
     ]
   },
   "npm": {
-    "stage": true
+    "stage": true,
+    "skipChecks": true
   },
   "plugins": {
     "@release-it/conventional-changelog": {
