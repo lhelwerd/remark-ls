@@ -40,3 +40,5 @@ This is an open-source project. Contributions must be licensed properly:
   `chore:` types for changes that must not trigger a release.
 - Releases are computed from these messages by CI, so keep each commit to one 
   logical change with an accurate type.
+- Work on a feature branch and open a pull request instead of committing to 
+  `main`.
