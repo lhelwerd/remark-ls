@@ -82,15 +82,16 @@ It also lints content, reporting diagnostics instead of changing text:
 We have automated the release process. Pushing commits with messages following 
 [Conventional Commits](https://www.conventionalcommits.org/) to `main` runs the 
 [GitHub CI](https://github.com/lhelwerd/remark-ls/actions) for tests and then 
-a semantic release workflow, which:
+a [release-it](https://github.com/release-it/release-it) workflow, which:
 
 - Determines if a new version is to be published and what the next version is 
   (`fix:` -> patch `x.y.z+1`, `feat:` -> minor `x.y+1.z`, breaking change with 
   `!` or `BREAKING CHANGE:` -> major `x+1.y.z`; `chore(...):` does not release);
 - Updates `CHANGELOG.md` and the version in `package.json` and the lock file, 
   then commits them without triggering the CI again;
-- Publishes to [npm](https://www.npmjs.com/package/@lhelwerda/remark-ls) through 
-  trusted publishing (with provenance); and
+- Stages the package on [npm](https://www.npmjs.com/package/@lhelwerda/remark-ls) 
+  through trusted publishing (with provenance), after which a maintainer must 
+  approve it with `npm stage approve` (2FA) to make it public; and
 - Creates a [GitHub release](https://github.com/lhelwerd/remark-ls/releases) 
   with the package tarball attached
 

@@ -1,0 +1,32 @@
+{
+  "git": {
+    "requireBranch": "main",
+    "commitMessage": "chore(release): ${version} [skip ci]",
+    "tagName": "v${version}",
+    "requireCommits": true,
+    "requireCommitsFail": false
+  },
+  "github": {
+    "release": true,
+    "releaseName": "v${version}",
+    "assets": [
+      "dist/*.tgz"
+    ]
+  },
+  "npm": {
+    "stage": true
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": {
+        "name": "conventionalcommits"
+      },
+      "infile": "CHANGELOG.md",
+      "header": "# Changelog"
+    }
+  },
+  "hooks": {
+    "after:bump": "mkdir -p dist && npm pack --pack-destination dist",
+    "after:release": "[ -z \"$GITHUB_OUTPUT\" ] || echo \"version=${version}\" >> \"$GITHUB_OUTPUT\""
+  }
+}
