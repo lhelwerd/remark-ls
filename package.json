@@ -34,6 +34,10 @@
     "unified-language-server": "^4.1.0",
     "unist-util-visit": "^5.2.0"
   },
+  "overrides": {
+    "glob": "^14.0.2",
+    "minimatch": "^11.0.1"
+  },
   "devDependencies": {
     "@semantic-release/changelog": "^7.0.0",
     "@semantic-release/exec": "^7.1.0",
