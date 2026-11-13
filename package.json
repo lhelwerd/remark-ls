@@ -35,16 +35,12 @@
     "unist-util-visit": "^5.2.0"
   },
   "overrides": {
+    "basic-ftp": "^6.2.6",
     "glob": "^14.0.2",
     "minimatch": "^11.0.1"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^7.0.0",
-    "@semantic-release/exec": "^7.1.0",
-    "@semantic-release/git": "^11.0.1",
-    "@semantic-release/github": "^12.0.11",
-    "@semantic-release/npm": "^13.2.0",
-    "conventional-changelog-conventionalcommits": "^9.3.1",
-    "semantic-release": "^25.0.9"
+    "@release-it/conventional-changelog": "^12.0.2",
+    "release-it": "^21.1.2"
   }
 }
