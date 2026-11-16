@@ -37,6 +37,7 @@ jobs:
           node-version: 26
           cache: npm
       - run: npm ci
+      - run: git symbolic-ref HEAD
       - run: >-
           npx release-it --ci --dry-run
           --no-git.requireBranch
