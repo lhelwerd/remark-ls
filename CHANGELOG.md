@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.0](https://github.com/lhelwerd/remark-ls/compare/v0.1.2...v0.2.0) (2026-11-16)
+
+### Features
+
+* Handle import error of deep imports of remark/rehype plugins ([#6](https://github.com/lhelwerd/remark-ls/issues/6)) ([b7b28ca](https://github.com/lhelwerd/remark-ls/commit/b7b28cad8c8e657044da8a1365d6ba756287c26d))
+
 ## [0.1.2](https://github.com/lhelwerd/remark-ls/compare/v0.1.1...v0.1.2) (2026-11-13)
 
 ### Bug Fixes
