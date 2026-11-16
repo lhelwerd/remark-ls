@@ -14,6 +14,9 @@ jobs:
       fail-fast: false
       matrix:
         node-version: [22, 24, 26]
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -21,7 +24,49 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: npm
       - run: npm ci
-      - run: npm test
+      - run: npm run coverage
+        env:
+          RUN_ID: "node-${{ matrix.node-version }}"
+      - name: Coveralls upload
+        uses: coverallsapp/github-action@v2.3.8
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          flag-name: "node-${{ matrix.node-version }}"
+          parallel: true
+          format: lcov
+          files: lcov*.info
+      - name: Archive coverage results
+        uses: actions/upload-artifact@v7.0.2
+        if: "${{ always() }}"
+        with:
+          name: "coverage-${{ matrix.node-version }}"
+          path: |
+            junit*.xml
+            lcov*.info
+
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Close parallel Coveralls build
+        uses: coverallsapp/github-action@v2.3.8
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          parallel-finished: true
+      - name: Collect coverage results
+        uses: actions/download-artifact@v8.0.2
+        with:
+          pattern: coverage-*
+          merge-multiple: true
+      - name: SonarQube scan
+        uses: SonarSource/sonarqube-scan-action@v8.5.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   release-dry-run:
     if: github.event_name == 'pull_request'

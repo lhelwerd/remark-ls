@@ -1,5 +1,10 @@
-dist/
+# Dependencies
 node_modules/
-junit.xml
-lcov.info
+
+# Release
+dist/
 *.tgz
+
+# Test
+junit*.xml
+lcov*.info

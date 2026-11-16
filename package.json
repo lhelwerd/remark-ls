@@ -15,7 +15,7 @@
   "author": "Leon Helwerda <leon.helwerda@gmail.com>",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "coverage": "node --test --experimental-test-coverage --test-reporter=tap --test-reporter=junit --test-reporter=lcov --test-reporter-destination=stdout --test-reporter-destination=junit.xml --test-reporter-destination=lcov.info tests/*.test.mjs"
+    "coverage": "node --test --experimental-test-coverage --test-reporter=tap --test-reporter=junit --test-reporter=lcov --test-reporter-destination=stdout --test-reporter-destination=junit$RUN_ID.xml --test-reporter-destination=lcov$RUN_ID.info tests/*.test.mjs"
   },
   "bin": {
     "remark-ls": "bin/index.mjs"
@@ -40,6 +40,7 @@
     "minimatch": "^11.0.1"
   },
   "devDependencies": {
+    "@release-it/bumper": "^8.0.1",
     "@release-it/conventional-changelog": "^12.0.2",
     "release-it": "^21.1.2"
   }
