@@ -31,12 +31,15 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
+      - name: Make the merge commit have a symbolic ref
+        run: git symbolic-ref HEAD refs/remotes/pull/${{ github.event.pull_request.number }}/merge
       - uses: actions/setup-node@v7
         with:
           node-version: 26
           cache: npm
       - run: npm ci
-      - run: >-
+      - id: release
+        run: >-
           npx release-it --ci --dry-run
           --no-git.requireBranch
           --no-git.requireUpstream
