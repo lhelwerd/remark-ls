@@ -18,6 +18,16 @@
     "skipChecks": true
   },
   "plugins": {
+    "@release-it/bumper": {
+        "in": {
+            "file": "sonar-project.properties",
+            "type": "text/x-properties"
+        },
+        "out": {
+            "file": "sonar-project.properties",
+            "type": "text/x-properties"
+        }
+    },
     "@release-it/conventional-changelog": {
       "preset": {
         "name": "conventionalcommits"
