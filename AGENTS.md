@@ -6,7 +6,7 @@ This is an open-source project. Contributions must be licensed properly:
 
 - Code contributions must be licensed under the MIT License.
 - If agentic AI uses output based on pre-existing content, avoid inclusion of 
-  code and documentation that is not compatible with these respective licenses.
+  code and documentation that is not compatible with this license.
 
 ## Code locations
 
@@ -17,13 +17,13 @@ This is an open-source project. Contributions must be licensed properly:
 - `plugins` contains custom remark plugins to adjust how Markdown files are 
   formatted.
 - `tests` contains test files (named `*.test.mjs`) for any modules from other 
-  directories.
+  directories. Each non-index file from `lib` and `plugins` has a test file.
 - `.remarkrc.mjs` contains a global configuration for Remark.
 
 ## Testing
 
 - Use `npm test` to run the tests from the `tests` directory.
-- Use `npm coverage` to obtain TAP output and JUnit XML and coverage LCOV files.
+- Use `npm run coverage` for TAP output and JUnit XML and coverage LCOV files.
 
 ## Code style
 
@@ -34,11 +34,11 @@ This is an open-source project. Contributions must be licensed properly:
 
 ## Commits and releases
 
-- Write commit messages as [Conventional Commits](https://www.conventionalcommits.org/): 
+- Use [Conventional Commits](https://www.conventionalcommits.org/) messages: 
   `fix:` (patch release), `feat:` (minor), and `feat!:` or a `BREAKING CHANGE:` 
-  footer (major). Use `chore(docs):`, `chore(test):` and similar scoped 
-  `chore:` types for changes that must not trigger a release.
+  footer (major). Use `chore(docs):`, `chore(test):` and similar scoped `chore:` 
+  types for changes that must not trigger a release.
 - Releases are computed from these messages by CI, so keep each commit to one 
-  logical change with an accurate type.
-- Work on a feature branch and open a pull request instead of committing to 
-  `main`.
+  logical change with an accurate commit type and description.
+- Work on a feature branch and open a pull request; `main` branch is protected 
+  and PRs must succeed code analysis scan CI. Commits are squash merged.
