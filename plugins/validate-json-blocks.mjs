@@ -2,9 +2,9 @@
 // block must be valid JSON. If its top-level object has a `$schema` string
 // that is a file path (relative to the Markdown file, or absolute), the
 // block is also validated against that JSON Schema (draft 2020-12). The
-// `$schema` key itself is not validated, so schemas need not allow it. URL
-// references are skipped because no network access is attempted. Problems
-// are reported as vfile messages, which the language server shows as
+// `$schema` key itself is excluded from validation, so it does not need to be
+// defined in the schema as an allowed property. URL references are skipped.
+// Problems are reported as vfile messages, which the language server shows as
 // diagnostics. Used by ../.remarkrc.mjs.
 import {readFileSync} from 'node:fs'
 import path from 'node:path'
